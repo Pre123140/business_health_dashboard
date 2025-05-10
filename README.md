@@ -1,114 +1,129 @@
+# Business Health Dashboard (AI-Augmented)
 
-# Business Health Dashboard 📊
-
-An interactive, executive-ready dashboard to monitor **sales performance**, **customer behavior**, and **financial health** in real time. Powered by Python, Dash, and Plotly — this project unifies business intelligence into one visual layer.
-
----
-
-## 🚀 Project Overview
-
-The Business Health Dashboard leverages the Superstore dataset to:
-- Visualize monthly sales and profit trends
-- Segment customers using RFM (Recency, Frequency, Monetary) analysis
-- Identify top-performing customers and products
-- Understand how discounting affects profitability
-- Generate actionable insights for marketing, finance, and sales teams
+This project analyzes sales, customer, and financial performance using AI-powered insights and a modular analytical pipeline. Built entirely in Python, it combines traditional data analysis with enhanced business diagnostics to surface the true health of a retail business.
 
 ---
 
-## 📁 Folder Structure
-business_health_dashboard/
+## Project Objective
+To create an end-to-end solution that ingests transactional business data, transforms it using domain logic, and delivers actionable insights across sales, customer behavior, and financial metrics.
+
+---
+
+## Real-World Business Value
+- Identify profitable vs. discount-heavy categories
+- Track customer recency and contribution to revenue
+- Detect sales anomalies, seasonal trends, and underperforming segments
+- Drive better pricing, targeting, and forecasting decisions
+
+---
+
+## Folder Structure
+```
+BUSINESS_HEALTH_DASHBOARD/
 ├── app/
-│   └── dashboard.py                  # Dash-powered UI with all visualizations
+│   └── dashboard.py               # Streamlit dashboard app
 ├── data/
-│   ├── superstore.csv                # Raw dataset
-│   └── enhanced_superstore.csv       # Processed + engineered dataset
+│   ├── superstore.csv            # Raw data
+│   └── enhanced_superstore.csv   # Cleaned + engineered data
+├── notebooks/
+│   ├── 1_data_cleaning.ipynb
+│   ├── 2_eda.ipynb
+│   ├── 3_sales_analysis.ipynb
+│   ├── 4_customer_analysis.ipynb
+│   └── 5_financial_analysis.ipynb
+├── output/                       # (Optional) Exported visuals or reports
 ├── src/
-│   ├── preprocess.py                 # Cleans and prepares raw data
-│   ├── feature_engineering.py        # Adds new metrics (CLV, RFM, Profit Margin)
-│   ├── eda.py                        # Exploratory visualizations
-│   ├── sales_analysis.py             # Trend and category-based sales insights
-│   ├── customer_analysis.py          # Customer segments, top customers
-│   ├── financial_analysis.py         # Profit, discount effects, margins
-├── requirements.txt                  # List of required libraries
-├── README.md                         # Main project documentation
-└── Business_Health_Dashboard_Study.pdf  # Conceptual study (added manually on GitHub)
-
-
-
-
+│   ├── __init__.py
+│   ├── preprocess.py             # Data cleaning and base transformation
+│   ├── eda.py                    # Exploratory visuals and correlation
+│   ├── sales_analysis.py         # KPI logic for orders, revenue, growth
+│   ├── customer_analysis.py      # RFM and loyalty-based segmentation
+│   └── financial_analysis.py     # Profitability and discount logict
+└── requirements.txt              # Dependencies
+```
 
 ---
 
-## 🛠️ Tech Stack
+## Key Features & Analysis Modules
 
-| Tool/Library     | Purpose                          |
-|------------------|----------------------------------|
-| Python           | Data handling, scripting         |
-| pandas           | Data manipulation                |
-| seaborn, matplotlib | Basic visualizations         |
-| plotly, dash     | Interactive visual dashboard     |
-| datetime         | Date calculations & tenure logic |
-| VS Code / Anaconda | IDE and environment setup      |
+### Sales KPIs
+- Total Orders, Sales, Profit
+- Monthly/Yearly Growth
+- Category-wise revenue
+- Regional breakdowns
 
----
+### Customer Insights
+- RFM Segmentation (Recency, Frequency, Monetary)
+- Top customers by revenue
+- Churn indicators (e.g., declining frequency)
 
-## 📊 Key Features
-
-- 📈 **Sales Trends:** Understand monthly revenue patterns
-- 💰 **Profit & Discount Insights:** Visualize margin leakage
-- 👥 **Customer Segmentation:** RFM-based classification (Champions, Loyal, Potential)
-- 🏆 **Top Customers:** Prioritize high-value clients
-- 📦 **Product & Category Sales:** Know your best and worst performers
-- 🔍 **Live Dashboard:** Launch via Dash for real-time interaction
+### Financial Metrics
+- Discount vs. Profit correlation
+- Profit Margins by product/category
+- Achievement % vs. Targets
 
 ---
 
-## 📚 Documentation
-
-Want to explore the complete strategy, visual samples, and conceptual explanation?
-
-👉 [**Read the Full Documentation Here ›**] 
-
-It includes:
-- Business context and value
-- Complete analytical methodology
-- Conceptual study (RFM, CLV, BI dashboards)
-- Future scope and extensions
+## Visualizations
+- Line Charts: Sales trend over time
+- Bar Plots: Profit by Region/Category
+- Box Plots: Discount impact on profit
+- Heatmaps: Correlation matrix (Recency, Spend, Tenure)
+- KPI Tiles: Orders, Sales, Profit Margin, Growth %
 
 ---
 
-## 🧪 How to Run
+## Tools & Libraries
+- pandas – Data loading, transformation
+- matplotlib & seaborn – Charts and trends
+- plotly – Interactive visualizations
+- streamlit – Real-time dashboard
 
-1. **Clone the Repository**
+---
+
+## How to Run the Dashboard
+
+### Step 1: Install dependencies
 ```bash
-git clone https://github.com/yourusername/business_health_dashboard.git
-cd business_health_dashboard
+pip install -r requirements.txt
+```
 
+### Step 2: Run the dashboard
+```bash
+streamlit run app/dashboard.py
+```
 
-Generate Processed Dataset
-python src/preprocess.py
-python src/feature_engineering.py
+> Ensure data is present in the `/data` folder. You can replace with your own transactional CSV following the same schema.
 
+---
 
-Run the Dashboard
-python app/dashboard.py
+## Conceptual Study
+Curious about the logic and analytical reasoning behind each module?
 
-Deliverables
-enhanced_superstore.csv with engineered metrics
-Dash-powered dashboard (self-hosted, browser-based)
-Standalone EDA, sales, customer, and financial scripts
-Full project documentation & conceptual study
+[Read the Full Conceptual Study (PDF)](https://github.com/Pre123140/BUSINESS_HEALTH_DASHBOARD/blob/main/Conceptual_Study_Business_Health.pdf)
 
+Includes:
+- KPI logic explanation
+- Segment scoring frameworks (RFM)
+- Strategic takeaways
+- Business questions answered through the dashboard
 
-License
-This project is released for educational and illustrative purposes.
+---
 
+## Future Enhancements
+- Add predictive analytics (e.g., customer churn, inventory forecasting)
+- Connect to live SQL / ERP systems for real-time dashboarding
+- Embed anomaly detection for profit drops or demand surges
+- Add CSV export per dashboard module
 
- Acknowledgments
-Dataset courtesy: Superstore US Sales
+---
 
-vbnet
-Copy
-Edit
+## License
+
+This project is open for educational use only. For commercial deployment, contact the author.
+
+---
+
+## Contact
+If you'd like to learn more or collaborate on projects or other initiatives, feel free to connect on [LinkedIn](https://www.linkedin.com/in/prerna-burande-99678a1bb/) or check out my [portfolio site](https://youtheleader.com/).
 
