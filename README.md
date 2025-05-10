@@ -100,7 +100,7 @@ streamlit run app/dashboard.py
 ## Conceptual Study
 Curious about the logic and analytical reasoning behind each module?
 
-[Read the Full Conceptual Study (PDF)](https://github.com/Pre123140/BUSINESS_HEALTH_DASHBOARD/blob/main/Conceptual_Study_Business_Health.pdf)
+[Read the Full Conceptual Study (PDF)](https://github.com/Pre123140/business_health_dashboard/blob/main/BUSINESS%20HEALTH%20DASHBOARD.pdf)
 
 Includes:
 - KPI logic explanation
